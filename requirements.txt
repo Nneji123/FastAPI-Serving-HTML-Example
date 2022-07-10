@@ -1,2 +1,3 @@
 fastapi[all]
 starlette==0.19.1
+gunicorn
