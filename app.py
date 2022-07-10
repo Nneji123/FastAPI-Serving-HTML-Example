@@ -21,5 +21,5 @@ def form_post(request: Request):
 def form_post(request: Request, name: str = Form(...), rate: int = Form(...),  principal: int = Form(...),  time: int = Form(...)):
     value = interest(principal, rate, time)
     tot = value + principal
-    result = f"{name.title()}, this is the interest you owe: {value}$ and the total amount you owe is {tot}$"
+    result = f"{name.title()}, this is the interest: {value}$ and the total amount you owe is {tot}$"
     return templates.TemplateResponse('result.html', context={"request": request, 'result': result, 'rate': rate, 'principal': principal, 'time': time})
